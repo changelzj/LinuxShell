@@ -1,0 +1,101 @@
+ ========================日期时间
+ date ：日期时间
+ 
+ 格式化：
+  date "+%Y %m %d"
+ date "+%Y年 %m月 %d日"
+ date "+%Y年 %m月 %d日 %H %M %S"
+ 
+ 设置时间：
+ date -s "2020-12-31 12:12:00"
+ 
+ cal 日历方式显示时间
+ 
+ cal 年号 ：显示整年日历
+ 
+ 
+ 
+ =================搜索查询
+ 
+ 
+ find [范围] 【选项】
+ 
+ 文件名查
+ find  /home -name  hello.txt
+ 
+  find / -name *.txt
+ 
+ 文件拥有着查
+  find  /home -user  dog
+ 查找大于20M的文件
+ find / -size +20M
+ 
+ 
+  查找小于20M的文件
+ find / -size -20M
+ 
+ 
+locate 快速定位文件路径
+ 
+1 首先创建数据库： updatedb
+ locate hello.txt
+ 
+ 
+grep指令查找：
+ 
+ 
+管道符号：| 将前面一个命令的处理结果输出给后面的命令处理
+
+cat a.txt | grep -n sys
+
+-n 显示行号
+-i 忽略大小写
+
+
+解压缩：
+
+gzip / gunzip
+
+压缩：gzip 文件名 文件名 ......    压缩后源文件不保留
+解压缩：gunzip 文件名，解压缩后 解压缩后源文件不保留
+
+zip / unzip
+
+zip 压缩
+unzip 解压
+
+zip 文件
+zip -r 递归压缩（文件和目录）
+
+
+zip -r  ee.zip /test/
+unzip -d ./ ee.zip
+
+tar 打包指令
+
+压缩：tar -zcvf ，打包后的文件名 要打包的文件  要打包的文件...
+
+解压缩到当前目录：tar -zxvf  压缩包
+解压缩到其他已经存在的目录：tar -zxvf  压缩包 -C 目标目录
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
