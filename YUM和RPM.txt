@@ -1,0 +1,56 @@
+软件包管理 
+
+RPM： 红帽 包管理器
+
+查询已经安装了的rpm包：rpm -qa
+
+
+
+eg:
+firefox-45.0.1-1.el6.centos.x86_64
+
+
+el6 :操作系统版本 centos6
+
+位数
+	x86_64:64
+	i686 i386 : 32
+	noarch :通用
+	
+
+	
+查询是否安装：rmp -q firefox
+ 软件包版本  安装信息 ：rpm -qi firefox
+
+安装的文件：rpm -ql firefox
+
+查找文件是属于哪个软件包
+rpm -qf /usr/share/icons/hicolor/256x256/apps/firefox.png
+
+卸载 rpm -e 软件包名
+rpm -e --nodeps 软件包名（即使被依赖，也一定删除）
+
+
+安装 rpm -ivh 软件名
+i:安装
+v:有提示
+h:有进度条 
+
+
+
+
+YUM
+
+下载rpm包并安装，处理依赖关系
+
+
+yum list  | grep firefox
+
+yum info firefox
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+磁盘分区 挂载
+
+两种分区格式
+
+mbr
+
+最多只支持4个主分区
+系统只能安装在主分区
+拓展分区要占一个主分区
+一个分区最大2TB
+
+
+
+gpt（win7 64位以后开始支持）
+
+主分区不限制数量（操作系统可能限制）
+支持18EB容量
+
+
+linux 对硬盘分区的标识：
+
+IDE 硬盘 并口 ：hdx~  x为盘号，代表哪一块硬盘   ~代表分区号
+SCSI 硬盘 串口：sdx~  x为盘号，代表哪一块硬盘   ~代表分区号
+
+
+lsblk -f 查看分区和挂载的情况
+
+
+  分区情况		分区类型		唯一标识，格式化后产生				挂载点，关联在文件系统的哪个位置	
+├─sda1 			ext4         db2daaa2-57f8-4631-9035-632dbbd3be9f 	/boot
+├─sda2 			swap         fc9f0e03-1a2c-4473-958d-aa5112208222 	[SWAP]
+└─sda3 			ext4         d2b9ac88-8ac2-4feb-a172-6ff9b47c26c9 	/
+
+
+
+挂载一块新的硬盘
+
+		分区 fdisk /dev/sdb 
+
+		格式化 mkfs -t ext4 /dev/sdb1
+
+		挂载：mount 设备路径 目标路径
+		mount /dev/sdb1 /newdisk
+
+解除：	
+		umount 设备名
+
+
+永久挂载：
+
+		修改/etc/fstab
+
+		
+		
+磁盘管理：
+	
+		df -lh 磁盘情况查询
+		
+		du -h /home 指定目录的磁盘占用情况
+		du - a:含文件 c：增加汇总值 h：带计量单位
+
+
+统计文件个数：ls -l 文件夹 | grep "^-" | wc -l
+统计根目录下文件的个数：ls -l / | grep "^-" | wc -l
+
+ls -l -r 文件夹 | grep "^-" | wc -l
+
+ls -l -r 文件夹 | grep "^d" | wc -l
+
+		

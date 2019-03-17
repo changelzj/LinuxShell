@@ -1,0 +1,123 @@
+显示系统执行的进程
+
+ps
+
+-a  显示所有
+-u  以用户形式显示进程信息
+-x  显示后台进程
+
+
+
+USER 用户
+PID  id
+%CPU 占用CPU百分比
+%MEM 占用内存百分比
+
+VSZ  虚拟内存
+RSS  物理内存
+
+TTY  终端
+STAT 状态  s休眠 r运行 Z僵死进程
+
+START 启动时间
+ TIME 占用CPU的总时间
+
+COMMAND 进程启动命令行
+
+
+
+ps -aux | grep sshd
+
+ps -ef 查看进程和父进程PPID
+
+
+终止进程
+
+kill 
+
+	kill 9100
+	kill -9 9100（强制）
+
+
+killall 进程名 （支持通配符批量杀死）
+
+
+
+
+pstree 查看进程树
+
+pstree -p 进程id
+pstree -u 所属用户
+
+
+
+
+服务：本质上还是进程，后台运行
+	
+	命令： service ( centos7+：systemctl)
+	
+	参数：
+		start
+		stop
+		restart
+		reload
+		status
+	
+	
+查看系统服务: 
+
+1.setup命令 	
+
+2.查看 /etc/init.d/
+	
+	
+服务可以按照运行级别选择是否自启动，chkconfig可以给每个服务的各个运行级别设置是否自启动
+
+	查看所有服务在各个级别的自启动状况：chkconfig  --list 
+	
+	查看某一个服务：chkconfig iptables --list
+	
+	修改：chkconfig --level 级别  服务名 on/off （不写级别默认全部）
+	
+	设置完成，需要重启
+	
+	
+	
+	
+进程的监控
+
+top 
+
+选项
+刷新秒数：-d 10 
+-i 
+-p 
+	
+动态交互指令：
+输入u 选择用户，输入k可以终止指定的进程号，排序：P 按照cpu大小 M 按照内存 N 按照pid
+q 退出
+
+
+网络状态监控
+
+netstat
+
+
+-p 哪些进程在使用
+-an 按照一定顺序排列输出
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

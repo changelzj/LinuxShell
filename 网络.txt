@@ -1,0 +1,17 @@
+修改和配置ip
+
+vim /etc/sysconfig/network-scripts/ifcfg-eth0
+
+
+启动时开始
+ONBOOT=yes
+
+静态ip
+BOOTPROTO=static
+
+IPADDR= 地址
+GATEWAY= 网关
+DNSI= dns
+
+重启网络服务
+service network restart
