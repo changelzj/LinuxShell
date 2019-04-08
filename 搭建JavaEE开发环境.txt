@@ -25,6 +25,10 @@ rpm -e --nodeps mysql-libs
 yum -y install make gcc-c++ cmake bison-devel ncurses-devel 
 
 
+
+Ð¶ÔØÀ¬»ø
+rpm -e --nodeps  mariadb-libs
+
 groupadd mysql 
 useradd -g mysql mysql
 chown -R mysql:mysql 
@@ -35,4 +39,12 @@ scripts/mysql_install_db --basedir=/usr/local/mysql --datadir=/usr/local/mysql/d
 
 
 cp support-files/mysql.server /etc/init.d/mysql
+
+
+
+redis:
+
+¡¡cd src
+
+¡¡¡¡make install PREFIX=/usr/local/redis
 

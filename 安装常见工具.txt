@@ -1,0 +1,11 @@
+
+安装 setup
+yum -y install setuptool
+
+
+安装 setup sysservice
+yum -y install ntsysv
+
+/usr/lib/systemd/system/
+
+
