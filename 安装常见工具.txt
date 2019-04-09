@@ -9,3 +9,13 @@ yum -y install ntsysv
 /usr/lib/systemd/system/
 
 
+安装防火墙
+yum install -y iptables
+yum install iptables-services
+
+sshd 修改端口
+vim /etc/ssh/sshd_config
+
+
+wget  
+yum install -y wget

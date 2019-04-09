@@ -2,11 +2,11 @@
 
 useradd mysql
 
-yum -y install make gcc-c++ cmake bison-devel ncurses-devel
+yum -y install make gcc-c++ cmake bison-devel ncurses-devel perl autoconf
 
-yum -y install  perl
 
-yum -y install autoconf 
+
+下面脚本 /usr/local/下必须新建文件夹mysql
 
 cmake \
 -DCMAKE_INSTALL_PREFIX=/usr/local/mysql \
@@ -33,7 +33,7 @@ cp support-files/mysql.server /etc/init.d/mysql.server
 
 
 
-chown -R mysql:mysql
+chown -R mysql:mysql ./
 
 
 

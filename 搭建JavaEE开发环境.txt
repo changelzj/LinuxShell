@@ -1,48 +1,43 @@
 
 
 
-
+1.修改环境变量
 vim /etc/profile
-
-
 
 
 JAVA_HOME=/opt/jdk1.8.0_191
 PATH=/opt/jdk1.8.0_191/bin:$PATH
 export JAVA_HOME PATH
 
+（export不得大写）
 
-logout
-
-
-/etc/sysconfig/iptables
+logout重新进入或执行source /etc/profile 让当前全局环境变量生效
 
 
-rpm -qa | grep  mysql
-
-rpm -e --nodeps mysql-libs
- 
-yum -y install make gcc-c++ cmake bison-devel ncurses-devel 
+2.修改防火墙 /etc/sysconfig/iptables
 
 
+3.MySQL 
 
 卸载垃圾
+
+rpm -qa | grep  mysql
+rpm -e --nodeps mysql-libs
 rpm -e --nodeps  mariadb-libs
 
-groupadd mysql 
-useradd -g mysql mysql
-chown -R mysql:mysql 
+groupadd mysql  添加MySQL用户和组
 
+将mysql目录所有者指向mysql用户    chown -R mysql:mysql 
 
+初始化
+scripts/mysql_install_db --user=mysql
 
-scripts/mysql_install_db --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data --user=mysql
-
-
+启动脚本拷贝到init.d
 cp support-files/mysql.server /etc/init.d/mysql
 
 
 
-redis:
+4.redis编译源码安装:
 
 　cd src
 

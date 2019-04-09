@@ -1,0 +1,10 @@
+
+
+echo  $LANG   查看当前操作系统的语言
+
+
+
+
+语言配置文件
+centos7:    /etc/locale.conf
+centos6     /etc/sysconfig/i18n
