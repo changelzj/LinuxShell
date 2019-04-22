@@ -19,3 +19,11 @@ vim /etc/ssh/sshd_config
 
 wget  
 yum install -y wget
+
+ifconfig
+yum install net-tools
+
+
+vim
+yum install vim
+

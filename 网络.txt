@@ -28,5 +28,6 @@ centos7
 	systemctl restart network.service
 
 
-
+修改网卡配置
+vim /etc/udev/rules.d/70-persistent-net.rules
 
